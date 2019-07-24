@@ -1,0 +1,18 @@
+h1{
+    color: blueviolet;
+    letter-spacing: -1px;
+    font-size: 32px;
+    background:darksalmon;
+    text-transform:uppercase;
+    text-shadow: 2px 2px 1px black;
+    font-family: 'Fascinate', cursive;
+  font-family: 'Roboto Slab', serif;
+}
+
+p{
+  /*text-indent: 50px;*/
+  width: 650px;
+  font-size: 18px;
+  font-family: verdana, arial, sans-serif;
+  /*text-align: justify;*/
+}
