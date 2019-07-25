@@ -1,23 +1,42 @@
 import React from 'react';
 
-class Card extends React.Component{
-	render(){
-		return{
-			
-		}
+import { Button } from 'antd'
+
+class Card2 extends React.Component{
+
+	state = {
+		likes : 0
 	}
+	
+
+	render(){
+		let botao = (
+			<Button 
+					type="primary" 
+					shape="circle"
+					icon="search"
+					onClick = {this.handleClick}
+				/>
+		)
+		return(
+			<div>
+				{botao}
+				{this.state.likes}
+			</div>
+		)
+	}
+
+
+
+	handleClick = () => {
+		this.setState(
+			{
+				likes: this.state.likes + 1
+			}
+		)
+	}
+
 }
 
-function Card(props) {
-  return (
-    <div className="Card">
-      <div class="card">
-        <h1>{props.title}</h1>
-        <p class="subtitulo">Co-Worker</p>
-        <p>Samuel num sabe o que tá fazendo</p>
-    </div>
-    </div>
-  );
-}
 
-export default Card;
+export default Card2;

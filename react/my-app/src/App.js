@@ -1,9 +1,10 @@
 import React from 'react';
 
-import Card from './Card'
-
 import './App.css';
+import Card from './Card'
+import Card2 from './Card2'
 
+import 'antd/dist/antd.css'
 
 function App(props) {
   return (
@@ -13,10 +14,8 @@ function App(props) {
         subtitle="Subtitulo"
         description="descricao"
       />
-      <Card 
-        title="Samuel Simão"
-        subtitle="Subtitulo"
-        description="descricao"
+      <Card2 
+
       />
     </div>
   );
