@@ -1,6 +1,15 @@
-.App {
-  text-align: center;
+.Linha{
+  display: inline-flex;
+  margin: 0;
+  
 }
+
+.Botao{
+  margin: 0.25vw;
+}
+
+
+
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -19,6 +28,9 @@
   color: white;
 }
 
+/*
+
+
 .App-link {
   color: #61dafb;
 }
@@ -31,3 +43,4 @@
     transform: rotate(360deg);
   }
 }
+*/
