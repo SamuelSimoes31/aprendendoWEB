@@ -1,0 +1,46 @@
+.grid{
+    width: 75vmin;
+    height: 75vmin;
+
+    background-color: #ffffff04;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    
+    /*
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    */
+}
+
+.quadrado {
+    border:5px solid #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /*background: tomato;*/
+    
+    font-size: 20vmin;
+    font-weight: bold;
+}
+.quadrado:hover {
+    background:lightgreen;
+    cursor: default;
+}
+
+.r-baixo{
+    border-bottom: none;
+}
+.r-cima{
+    border-top: none;
+}
+.r-esquerda{
+    border-left: none;
+}
+.r-direita{
+    border-right: none;
+}
