@@ -2,44 +2,59 @@ const gameStats = {
     player: 'X',
     playerPoints: [0,0],
     grid: [],
-
+    
     changePlayer: function(){
         this.player = this.player==='X'?'O':'X'
-        simboloAtual.innerHTML = gameStats.player
     }
 }
 
-const simboloAtual = document.createElement('div')
-simboloAtual.innerHTML = gameStats.player
-simboloAtual.classList.add('symbol')
+function NodeSymbol(){
+    this.element = document.createElement('div')
+    this.element.classList.add('symbol')
+    this.element.setAttribute('cor','')
 
-const squares = document.querySelectorAll('.square')
-let divSymbol
-console.log(squares)
-squares.forEach(e => {
+    this.setPlayerSymbol = s => {
+        this.element.innerHTML = s
+        this.element.setAttribute('cor',s=='X'?'red':'blue')
+    }
+
+    this.remove = () => this.element.remove()
+}
+
+function Squares(){
+
+}
+
+//GAME
+const divSymbol = new NodeSymbol()
+
+divSymbol.setPlayerSymbol(gameStats.player) //inicializar
+
+const squares = document.querySelectorAll('[square]')
+// console.log(squares)
+squares.forEach((e,i) => {
     e.onmouseenter = () => {
-        switch(simboloAtual.innerHTML){
-            case 'X': simboloAtual.classList.add('red');break;
-            case 'O': simboloAtual.classList.add('blue');break;
-        }
-        e.appendChild(simboloAtual)
-        divSymbol = e.firstChild;
+        if(gameStats.grid[i]) divSymbol.remove()
+        else e.appendChild(divSymbol.element)
     }
 })
 
 const grid = document.querySelector('.grid')
-console.log(grid)
+// console.log(grid)
 grid.onmouseleave = () => {
-    // divSymbol.remove()
+    divSymbol.remove()
 }
 
 squares.forEach((e,i) => {
     e.onclick = () => {
-        gameStats.grid[i] = gameStats.player
-        gameStats.changePlayer()
+        if(!gameStats.grid[i]){
+            gameStats.grid[i] = gameStats.player
+            gameStats.changePlayer()
+            divSymbol.remove()
+            let clone = divSymbol.element.cloneNode(true)
+            e.appendChild(clone)
+            divSymbol.setPlayerSymbol(gameStats.player)
+            e.setAttribute('square','filled')
+        }
     }
 })
-
-function NodeSymbol(){
-    
-}

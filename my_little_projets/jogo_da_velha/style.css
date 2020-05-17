@@ -3,6 +3,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Varela Round', sans-serif;
 }
 
 .grid {
@@ -13,34 +14,34 @@ body {
     /* border: solid rgb(255, 0, 0) 1px; */
 }
 
-.square {
+[square] {
     /* width: 100px;
     height: 100px; */
     border: solid black 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
+}
 
+[square=empty]:hover {
+    background-color:hsl(230, 10%, 35%);
 }
 
 .symbol {
     font-size: 10em;
     font-weight: bold;
-    font-family: 'Varela Round', sans-serif;
+    
     user-select: none; /* Non-prefixed version, currently
                     supported by Chrome, Edge, Opera and Firefox */
 }
 
-.red {
+[cor=red] {
     color: red;
 }
 
-.blue {
+[cor=blue] {
     color: blue;
-}
-
-.square:hover {
-    background-color:hsl(230, 10%, 35%);
 }
 
 #sq1 {
