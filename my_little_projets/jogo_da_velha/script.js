@@ -2,10 +2,24 @@ const gameStats = {
     player: 'X',
     playerPoints: [0,0],
     grid: [],
-    
+    turn: 0,
     changePlayer: function(){
         this.player = this.player==='X'?'O':'X'
     }
+}
+
+function verificarVitoria(){
+    const g = gameStats.grid
+    const equal = (a,b,c) => (g[a]==g[b] && g[b]==g[c])
+    if(equal(0,1,2)) return true
+    if(equal(3,4,5)) return true
+    if(equal(6,7,8)) return true
+    if(equal(0,3,6)) return true
+    if(equal(1,4,7)) return true
+    if(equal(2,5,8)) return true
+    if(equal(0,4,8)) return true
+    if(equal(2,4,6)) return true
+    return false
 }
 
 function NodeSymbol(){
@@ -55,6 +69,7 @@ squares.forEach((e,i) => {
             e.appendChild(clone)
             divSymbol.setPlayerSymbol(gameStats.player)
             e.setAttribute('square','filled')
+            if(++gameStats.turn>4) verificarVitoria()
         }
     }
 })

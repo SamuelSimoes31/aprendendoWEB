@@ -6,6 +6,10 @@ body {
     font-family: 'Varela Round', sans-serif;
 }
 
+h1 {
+    font-size: 4em;
+}
+
 .grid {
     position: relative;
     display: grid;
@@ -45,37 +49,41 @@ body {
 }
 
 #sq1 {
-    /* grid-area: sq1; */
+    border-left: none;
+    border-top: none;
 }
 
 #sq2 {
-    /* grid-area: sq2; */
+    border-top: none;
 }
 
 #sq3 {
-    /* grid-area: sq3; */
+    border-right: none;
+    border-top: none;
 }
 
 #sq4 {
-    /* grid-area: sq4; */
+    border-left: none;
 }
 
 #sq5 {
-    /* grid-area: sq5; */
+
 }
 
 #sq6 {
-    /* grid-area: sq6; */
+    border-right: none;
 }
 
 #sq7 {
-    /* grid-area: sq7; */
+    border-left: none;
+    border-bottom: none;
 }
 
 #sq8 {
-    /* grid-area: sq8; */
+    border-bottom: none;
 }
 
 #sq9 {
-    /* grid-area: sq9; */
+    border-right: none;
+    border-bottom: none;
 }
