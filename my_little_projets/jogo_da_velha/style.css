@@ -1,13 +1,18 @@
+* {
+    font-family: 'Varela Round', sans-serif;
+}
+
 body {
     background-color:hsl(230, 13%, 18%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Varela Round', sans-serif;
+
 }
 
 h1 {
     font-size: 4em;
+    margin-bottom: 0;
 }
 
 .grid {
@@ -46,6 +51,28 @@ h1 {
 
 [cor=blue] {
     color: blue;
+}
+
+.pontuacao {
+    display: flex;
+    flex-direction: row;
+    border: solid black 3px;
+    height: 50px;
+    width: 600px;
+    margin: 10px;
+    
+}
+
+.pontuacao div{
+    flex-grow: 1;
+    border: solid red 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pontuacao div#vez {
+    flex-grow: 7;
 }
 
 #sq1 {

@@ -1,6 +1,6 @@
 const gameStats = {
     player: 'X',
-    playerPoints: [0,0],
+    playerPoints: {X:0,O:0},
     grid: [],
     turn: 0,
     changePlayer: function(){
@@ -69,7 +69,10 @@ squares.forEach((e,i) => {
             e.appendChild(clone)
             divSymbol.setPlayerSymbol(gameStats.player)
             e.setAttribute('square','filled')
-            if(++gameStats.turn>4) verificarVitoria()
+            if(++gameStats.turn>4 && verificarVitoria()){
+                gameStats.playerPoints[gameStats.grid[i]]++
+                
+            }
         }
     }
 })
